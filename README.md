@@ -1,37 +1,19 @@
-## Welcome to GitHub Pages
+# kubernetes-sapporo-startup
+本リポジトリは、
+ [Kubernetes Sapporo for Beginners](https://sapporo-beginner-kubernetes.connpass.com/)
+が実施しているハンズオン用の各種ソース、マニフェストファイル保管場所です。
 
-You can use the [editor on GitHub](https://github.com/kubernetes-sapporo-for-beginners/hands-on/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+# ハンズオン内容
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## #1アプリケーションを動かすぞ！
+Kubernetesで実際にアプリケーションを動かしてみましょう。
+主にDeployments,StatefulSetsを中心に、Pod,Service,Volumeの定義についても知識と実践を深めていきます。
 
-### Markdown
+資料：
+[概要資料](./Step1-ApplicationDeployment/README.md)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## #2 T.B.D.
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kubernetes-sapporo-for-beginners/hands-on/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
