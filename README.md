@@ -1,4 +1,4 @@
-# kubernetes-sapporo-startup
+# はじめに
 本リポジトリは、
  [Kubernetes Sapporo for Beginners](https://sapporo-beginner-kubernetes.connpass.com/)
 が実施しているハンズオン用の各種ソース、マニフェストファイル保管場所です。
