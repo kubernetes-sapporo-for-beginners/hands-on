@@ -1,0 +1,78 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: greet
+spec:
+  serviceName: "greet"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: greet
+  template:
+    metadata:
+      labels:
+        app: greet
+        ver: 0.1.0
+    spec:
+      terminationGracePeriodSeconds: 5 
+      containers:
+      - name: greet
+        image: hirokimatsumoto/sample-greeting-api:0.1.0
+        imagePullPolicy: IfNotPresent 
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 300m
+            memory: 200Mi
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          periodSeconds: 5
+          timeoutSeconds: 5
+          successThreshold: 1
+          failureThreshold: 5
+          initialDelaySeconds: 5
+        readinessProbe:
+          failureThreshold: 5
+          httpGet:
+            path: /health
+            port: 8080
+            scheme: HTTP
+          periodSeconds: 5
+          successThreshold: 1
+          timeoutSeconds: 5
+        env:
+        - name: APP_LOG_DIR
+          value: /var/lib/greeting/data
+        volumeMounts:
+        - name: greet-storage
+          mountPath: /var/lib/greeting/data
+      - name: dummy
+        image: alpine:3.8
+        imagePullPolicy: IfNotPresent 
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 100m
+            memory: 100Mi
+        volumeMounts:
+        - name: greet-storage
+          mountPath: /share
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do ls -l /share;sleep 10;done"]
+  volumeClaimTemplates:
+  - metadata:
+      name: greet-storage
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "standard"
+      resources:
+        requests:
+          storage: 1Gi

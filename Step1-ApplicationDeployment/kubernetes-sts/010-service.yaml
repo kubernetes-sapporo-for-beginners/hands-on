@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: greet
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 30000
+    targetPort: 8080
+    name: greet
+  selector:
+    app: greet
+    ver: 0.1.0
