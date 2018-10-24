@@ -31,7 +31,7 @@ spec:
       terminationGracePeriodSeconds: 5 
       containers:
       - name: greet
-        image: hirokimatsumoto/sample-greeting-api:0.1.0
+        image: k8ssa/hands-on-greeting-api:latest
         imagePullPolicy: IfNotPresent 
         resources:
           requests:
