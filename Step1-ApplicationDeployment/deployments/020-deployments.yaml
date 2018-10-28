@@ -31,7 +31,7 @@ spec:
       terminationGracePeriodSeconds: 5 
       containers:
       - name: greet
-        image: k8ssa/hands-on-greeting-api:latest
+        image: k8ssa/hands-on-greeting-api:1.0.0
         imagePullPolicy: IfNotPresent 
         resources:
           requests:
@@ -44,7 +44,7 @@ spec:
         - containerPort: 8080
         livenessProbe:
           httpGet:
-            path: /health
+            path: /read
             port: 8080
           periodSeconds: 5
           timeoutSeconds: 5
@@ -85,3 +85,4 @@ spec:
       - name: greet-storage
         persistentVolumeClaim:
           claimName: greet-pv-claim
+
