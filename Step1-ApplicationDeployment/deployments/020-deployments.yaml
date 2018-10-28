@@ -44,7 +44,7 @@ spec:
         - containerPort: 8080
         livenessProbe:
           httpGet:
-            path: /read
+            path: /health
             port: 8080
           periodSeconds: 5
           timeoutSeconds: 5
