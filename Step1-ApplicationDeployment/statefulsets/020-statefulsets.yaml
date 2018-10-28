@@ -1,23 +1,9 @@
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: greet-pv-claim
-  annotations:
-    volume.beta.kubernetes.io/storage-class: "standard"
-  labels:
-    app: greet
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 1Gi
----
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: greet
 spec:
+  serviceName: "greet"
   replicas: 1
   selector:
     matchLabels:
@@ -31,14 +17,14 @@ spec:
       terminationGracePeriodSeconds: 5 
       containers:
       - name: greet
-        image: hirokimatsumoto/sample-greeting-api:0.1.0
+        image: k8ssa/hands-on-greeting-api:1.0.0
         imagePullPolicy: IfNotPresent 
         resources:
           requests:
             cpu: 100m
             memory: 100Mi
           limits:
-            cpu: 100m
+            cpu: 300m
             memory: 200Mi
         ports:
         - containerPort: 8080
@@ -81,7 +67,12 @@ spec:
           mountPath: /share
         command: ["/bin/sh"]
         args: ["-c", "while true; do ls -l /share;sleep 10;done"]
-      volumes:
-      - name: greet-storage
-        persistentVolumeClaim:
-          claimName: greet-pv-claim
+  volumeClaimTemplates:
+  - metadata:
+      name: greet-storage
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "standard"
+      resources:
+        requests:
+          storage: 1Gi
