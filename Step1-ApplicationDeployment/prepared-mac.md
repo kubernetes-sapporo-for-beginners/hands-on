@@ -2,7 +2,7 @@
 
 ## Kubernetesの有効化
 
-Kuberntesの設定画面で、 `Enable Kubernetes]に、チェックを付けてください。
+Kuberntesの設定画面で、 `Enable Kubernetes` に、チェックを付けてください。
 
 そして、Kubernetesを選択してください。
 ![image](../images/mac-kubernetes-setting.png)
