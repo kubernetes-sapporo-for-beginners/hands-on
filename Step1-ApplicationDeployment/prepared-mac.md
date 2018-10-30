@@ -24,7 +24,8 @@ https://docs.docker.com/docker-for-windows/#kubernetes
 下記コマンドを行い、`standard` のStorageClassを作成してください。
 
 ```
-$ kubectl apply -f kubernetes-sapporo-startup/docs/\#1-ApplicationDeployment/kubernetes-prepared/docker-storageclass.yaml
+$ cd hands-on/Step1-ApplicationDeployment/kubernetes-prepared
+$ kubectl apply -f docker-storageclass.yaml
 storageclass.storage.k8s.io "standard" created
 
 $ kubectl get storageclass
