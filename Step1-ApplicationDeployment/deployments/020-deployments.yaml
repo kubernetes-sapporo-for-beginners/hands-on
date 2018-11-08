@@ -80,7 +80,7 @@ spec:
         - name: greet-storage
           mountPath: /share
         command: ["/bin/sh"]
-        args: ["-c", "while true; do ls -l /share;sleep 10;done"]
+        args: ["-c", "trap 'exit 0' 15;while true; do exec sleep 100 & wait $!; done"]
       volumes:
       - name: greet-storage
         persistentVolumeClaim:
