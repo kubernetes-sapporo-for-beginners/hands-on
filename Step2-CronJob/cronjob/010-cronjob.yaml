@@ -1,0 +1,30 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: cron-test
+spec:
+  concurrencyPolicy: Replace
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: cron-test
+        spec:
+          restartPolicy: Never
+          containers:
+            - name: cron-test
+              image: k8ssa/hands-on-alpine-cronjob:latest
+              imagePullPolicy: IfNotPresent
+              resources:
+                requests:
+                  cpu: 100m
+                  memory: 100Mi
+                limits:
+                  cpu: 100m
+                  memory: 100Mi
+              args:
+                - sh
+                - -c
+                - curl -s http://greet:30000/hello | jq '.Message'
