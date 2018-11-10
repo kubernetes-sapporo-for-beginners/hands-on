@@ -12,8 +12,6 @@ Kubernetesで実際にアプリケーションを動かしてみましょう。
 資料：
 [概要資料](./Step1-ApplicationDeployment/README.md)
 
-## #2 T.B.D.
-
-
-
+## #2こんなのもあるよ！CronJobを動かしてみよう！
+まだβ機能となりますが、Kubernetesに存在するJobスケジュールによるJob実行のCronJobを実際に動かしてみたいと思います。
 
