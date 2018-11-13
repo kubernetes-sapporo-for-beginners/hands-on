@@ -7,5 +7,5 @@ https://kubernetes-sapporo-for-beginners.github.io/hands-on/
 を確認して下さい。
 
 # 概要
-alpine 3.8をベースにcurlとjqコマンドを追加しています。
+alpine 3.8をベースにcurlとjqコマンドを追加しています。  
 上記ハンズオンのStep1で構築するAPIを呼び出しているため、前提としてStep1のコンテナを作成する必要があります。
