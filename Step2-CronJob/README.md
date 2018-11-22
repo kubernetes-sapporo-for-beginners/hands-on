@@ -18,6 +18,6 @@ Step1の準備ができていれば実行環境は問題ありません。
 
 ハンズ資料は、
 
-- xxxxxxx
+- https://speakerdeck.com/hirose39/kubernetes-getting-started-number-2-cronjob
 
 となります。当日公開予定となっております。
