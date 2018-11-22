@@ -52,6 +52,6 @@ Kubernetesを使える環境を用意してください。
 
 ハンズ資料は、
 
-- xxxxxxx
+- [https://speakerdeck.com/hirokimatsumoto/kubernetes-hands-on-apps-for-k8ssa](https://speakerdeck.com/hirokimatsumoto/kubernetes-hands-on-apps-for-k8ssa)
 
-となります。当日公開予定となっております。
+となります。
