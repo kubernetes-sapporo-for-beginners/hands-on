@@ -1,0 +1,7 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: search-engine
+spec:
+  type: ExternalName
+  externalName: iss.ndl.go.jp
