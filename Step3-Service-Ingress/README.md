@@ -9,12 +9,15 @@ Service,Ingressを学ぶためのデモンストレーション、およびハ�
 
 ハンズオンを実施される方は、下記の準備をお願いします。  
 
-Kubernetes実行環境の用意 (下記は一例です。その他環境でももちろん問題ありません )
+## Kubernetes環境
+Kubernetes実行環境の用意してください。 (下記は一例です。その他環境でももちろん問題ありません )
 - GKE
 - AKS
 - EKS
 - Docker for Desktop (Docker for Mac / Docker for Windows)
 
+
+## 動作確認用アプリケーションのデプロイ
 Service,Ingressの動きを確認するためのアプリケーションのデプロイをしてください。。<br>
 
 ```
