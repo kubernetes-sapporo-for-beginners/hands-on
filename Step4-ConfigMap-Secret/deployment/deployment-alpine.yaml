@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alpine
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: alpine
+  template: 
+    metadata: 
+      labels: 
+        app: alpine
+    spec: 
+      containers:
+      - name: alpine-container
+        image: alpine:3.9
+        envFrom: 
+          - configMapRef: 
+              name: handson-configmap
+          - secretRef: 
+              name: handson-secret
+        volumeMounts:
+        - mountPath: /config
+          name: secret-file-volume
+        command:
+          - /bin/sh
+        tty: true
+        imagePullPolicy: IfNotPresent
+      volumes: 
+        - name: secret-file-volume
+          secret: 
+            secretName: handson-secret-file
