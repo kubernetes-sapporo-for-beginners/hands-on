@@ -21,11 +21,10 @@ spec:
           - secretRef: 
               name: handson-secret
         volumeMounts:
-        - mountPath: /config
-          name: secret-file-volume
-        command:
-          - /bin/sh
-        tty: true
+          - mountPath: /config
+            name: secret-file-volume
+        command: ["/bin/sh"]
+        args: ["-c", "trap 'exit 0' 15;while true; do exec sleep 100 & wait $!; done"]
         imagePullPolicy: IfNotPresent
       volumes: 
         - name: secret-file-volume
