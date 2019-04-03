@@ -1,9 +1,11 @@
 # Service、Ingress
 
-Service,Ingressを学ぶためのデモンストレーション、およびハンズオン用のマニフェストファイルを格納しています。
+Service,Ingressを学ぶためのデモンストレーション、およびハンズオン用のマニフェストファイルを格納しています。<br>
+資料は、
 
-資料は後日アップされます。
+- [ハンズオン：コンテナにアクセスする方法](https://speakerdeck.com/hirokimatsumoto/kubernetes-hands-on-apps-for-k8ssa-number-3)
 
+となります。
 
 # 事前準備
 
