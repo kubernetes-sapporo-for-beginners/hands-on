@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-succeeded
+spec:
+  restartPolicy: Never
+  containers:
+    - name: alpine
+      image: alpine:latest
+      command:
+        - echo
+        - hello
+      resources:
+        limits:
+          cpu: 50m
+          memory: 100M
+        requests:
+          cpu: 50m
+          memory: 100M
