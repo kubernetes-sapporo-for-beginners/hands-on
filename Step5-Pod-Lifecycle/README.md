@@ -49,6 +49,12 @@ deployment.apps/podinfo configured
 $
 ```
 
+```bash
+$ kubectl apply -f pending3.yaml
+deployment.apps/podinfo configured
+$
+```
+
 ## Succeeded/Failedの状態
 
 ```bash
@@ -95,7 +101,7 @@ $
 |readnessProbe有効化|kubectl exec -it *{podname}* --  curl -X POST localhost:9898/readyz/enable|
 |libenessProbe無効化|kubectl exec -it *{podname}* --  curl -X POST localhost:9898/healthz/disable|
 |libenessProbe有効化|kubectl exec -it *{podname}* --  curl -X POST localhost:9898/healthz/enable|
-|libenessProbe有効化|kubectl exec -it *{podname}* --  curl localhost:9898/oom|
+|OOMの発生|kubectl exec -it *{podname}* --  curl localhost:9898/oom|
 
 ### livenessProbeの確認
 
