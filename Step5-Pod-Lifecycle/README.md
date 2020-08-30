@@ -99,8 +99,8 @@ $
 |バージョン取得|kubectl exec -it *{podname}* -- curl http://{service or pod ipaddress}:9898/version|
 |readnessProbe無効化|kubectl exec -it *{podname}* --  curl -X POST localhost:9898/readyz/disable|
 |readnessProbe有効化|kubectl exec -it *{podname}* --  curl -X POST localhost:9898/readyz/enable|
-|libenessProbe無効化|kubectl exec -it *{podname}* --  curl -X POST localhost:9898/healthz/disable|
-|libenessProbe有効化|kubectl exec -it *{podname}* --  curl -X POST localhost:9898/healthz/enable|
+|livenessProbe無効化|kubectl exec -it *{podname}* --  curl -X POST localhost:9898/healthz/disable|
+|livenessProbe有効化|kubectl exec -it *{podname}* --  curl -X POST localhost:9898/healthz/enable|
 |OOMの発生|kubectl exec -it *{podname}* --  curl localhost:9898/oom|
 
 ### livenessProbeの確認
