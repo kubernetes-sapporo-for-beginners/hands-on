@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: centos-deployment
+  labels:
+    app: centos
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: centos
+  template:
+    metadata:
+      labels:
+        app: centos
+    spec:
+      containers:
+      - name: centos
+        image: centos:8
+        command: [ "sleep", "3600000" ]
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "300Mi"
+          limits:
+            cpu: "1500m"
+            memory: "3000Mi"
